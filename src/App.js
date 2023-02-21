@@ -1,24 +1,22 @@
-import logo from './logo.svg';
+
 import './App.css';
+/* import {PanelTasks} from './components/PanelTasks/PanelTasks'
+import {Layaout} from './components/Layout/Layaout' */
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { PanelProducts } from './components/panelProducts/PanelProducts';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+  <>
+    <PanelProducts/>
+    {/* <BrowserRouter>
+      <Routes> 
+        <Route path="/panel-tasks/:token" element={<PanelTasks/>}/> 
+        <Route path="/" element={<Layaout />} />    
+        <Route path="/chat-bot" element={<PanelChat />} />    
+     </Routes> 
+   </BrowserRouter>   */}
+  </>
   );
 }
 

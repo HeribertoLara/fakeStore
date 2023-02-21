@@ -1,0 +1,29 @@
+@import url(../../index.css);
+.header{
+    padding-top: 5rem;
+    display: grid;
+    grid-template-columns: repeat(2 ,1fr);
+    place-items: center;
+    padding-top: 5rem;
+  }
+
+  .header--title{
+    font-size: 50px;;
+  }
+
+  .header--input{
+    border: 1px solid var(--gray);
+    margin:0 5px;
+    border-radius: 3px;
+    height: 1.5rem;
+    padding: .3rem .3rem;
+    width: 45%;
+  }
+  .header--button{
+    width: 45%;
+    background-color:var(--green);
+    border: var(--green);
+    padding: .5rem ;
+    border-radius: 3px;
+    color: var(--white); 
+  }

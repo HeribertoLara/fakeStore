@@ -1,0 +1,25 @@
+@import url(../../index.css);
+.card{
+    border:  1px solid #d3d3d3;
+    box-shadow: 3px 3px 3px #d3d3d3;
+    border-radius: 3px;
+    width: 20rem;
+    padding: 1rem;
+    border-bottom: solid 2mm var(--green);
+  }
+
+  .card--line{
+    border: solid 1px var(--gray);
+    margin: 10px 5px;
+    
+  }
+
+  .card--subtitle{
+    color: var(--gray);
+  }
+  .card--description{
+    height: 5rem;
+  }
+  
+
+ 
