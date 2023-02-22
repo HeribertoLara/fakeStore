@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import './HeaderShop.css'
 import { TbTruckDelivery } from 'react-icons/tb'
 import { SiHomeassistantcommunitystore } from 'react-icons/si'
-import { BiSearchAlt } from 'react-icons/bi'
+import { BiSearchAlt, BiUser } from 'react-icons/bi'
 import { HiOutlineShoppingBag } from 'react-icons/hi'
 
  const HeaderShop = ({
@@ -42,6 +42,10 @@ import { HiOutlineShoppingBag } from 'react-icons/hi'
             <button className='header--bag'>
                 <HiOutlineShoppingBag className='header--icon--bag'/>
                 <div className="header--bag--circle">{countCart}</div>
+            </button>
+            <button className='header--bag'>
+                <BiUser className='header--icon--bag'/>
+                
             </button>
          
         </section>

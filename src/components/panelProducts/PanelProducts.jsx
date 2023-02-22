@@ -8,6 +8,7 @@ const PanelProducts=()=> {
   const [countCart, setCountCart]=useState(0) 
   const [cart, setCart]=useState([])
 
+ 
 
   const getProducts = async () => {
     try {
@@ -20,7 +21,7 @@ const PanelProducts=()=> {
     
     return res;
     } catch (error) {
-      alert(error);
+      alert(error); 
     }
   };
 

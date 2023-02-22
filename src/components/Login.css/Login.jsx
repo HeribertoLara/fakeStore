@@ -1,42 +1,63 @@
 import axios from "axios";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import './login.css'
-/* import { withRouter } from "react-router-dom";
- */
+/* import { withRouter } from "react-router-dom"; */
+
 const Login = (props) => {
  
   const navigate = useNavigate() 
-  const [email, setEmail] = useState("");
+  
+  const [users, setUsers] = useState([]);
+  const [userName, setUserName] = useState("");
   const [pass, setPass] = useState("");
   const [error, setError] = useState(null);
 
-  const sendForm = async (email, password) => {
+  const sendForm = async (userName, password) => {
     try {
       const res = await axios.post(
-        "https://tasks-crud.academlo.com/api/auth/login",
+        "https://fakestoreapi.com/auth/login",
         {
-          email,
-          password,
-        },
-        {
-          Accept:"application/json"
+          username:userName,
+          password:password,
         }
       );
+      console.log(res)
       return res;
+    } catch (error) {
+      alert(error);
+    }
+  }; 
+
+  const getUsers = async () => {
+    try {
+      const res = await axios.get(
+        "https://fakestoreapi.com/users"
+        
+       
+      );
+   
+    setUsers(res.data)
+    console.log(users)
+    return res;
     } catch (error) {
       alert(error);
     }
   };
 
+  useEffect(()=>{
+    getUsers()
+  }, [])
+
+
   const processData = async (e) => {
     e.preventDefault();
-    const res = await sendForm(email, pass);
+    const res = await sendForm(userName, pass);
     console.log(res)
    
 
-    if (!email.trim() || !pass.trim()) {
-      setError("Datos vacíos email!");
+    if (!userName.trim() || !pass.trim()) {
+      setError("Datos vacíos userName!");
       return;
     }
     if (!pass.trim()) {
@@ -45,11 +66,10 @@ const Login = (props) => {
     }
     if (res.status === 200) {
       alert("usuario registrado");
-      setEmail("");
+      setUserName("");
       setPass("");
       setError(null);
-      //
-      navigate(`/chat-bot/${res.data}`) 
+      navigate(`/home`) 
     }
    
   };
@@ -64,21 +84,21 @@ const Login = (props) => {
             {error ? <div className="form-alert form-alert-danger">{error}</div> : null}
 
             <label>
-              Correo Electronico
+              Username
               <br />
               <input
                 className="form--input"
-                placeholder="Escribe tu correo electronico"
-                type="email"
-                onChange={(e) => setEmail(e.target.value)}
-                value={email}
+                placeholder="user name"
+                type="text"
+                onChange={(e) => setUserName(e.target.value)}
+                value={userName}
               />
             </label>
           </div>
           <br />
           <div>
             <label>
-              Contraseña
+              password
               <br />
               <input
               className="form--input"
