@@ -1,20 +1,19 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import {AiTwotoneStar, AiOutlineShopping, AiOutlineShoppingCart} from 'react-icons/ai'
+import { DataContext } from '../../context/Context'
 import './CardProduct.css'
 
 const CardProduct= ({
-    setCart,
     product,
-    cart,
-    setCountCart
+
 }) => {
 
-   
+   const {cart, setCart, setCountCart} = useContext(DataContext)
 
     const addProduct = (cart, product) =>{
         cart.push(product)
         setCart([...cart])
-        console.log(cart)
+        /* console.log(cart) */
         setCountCart(cart.length)
     }
 

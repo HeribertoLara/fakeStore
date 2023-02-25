@@ -1,14 +1,14 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import './HeaderShop.css'
 import { TbTruckDelivery } from 'react-icons/tb'
 import { SiHomeassistantcommunitystore } from 'react-icons/si'
 import { BiSearchAlt, BiUser } from 'react-icons/bi'
 import { HiOutlineShoppingBag } from 'react-icons/hi'
+import { DataContext } from '../../context/Context'
 
- const HeaderShop = ({
-    countCart,
+ const HeaderShop = ()=> {
+    const {countCart} =  useContext(DataContext)
 
- })=> {
     
     const [onFocus, setOnFocus ]= useState(false)
     
