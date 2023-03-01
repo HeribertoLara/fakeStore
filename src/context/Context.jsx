@@ -8,6 +8,28 @@ export const  DataProvider= ({children}) => {
     const [countCart, setCountCart]=useState(0) 
     const [cart, setCart]=useState([])
     const [products, setProducts]= useState([])
+    const [text, setText]=useState('')
+    
+    let items 
+
+    let searchedProducts = []
+    if (!text >=1){
+      searchedProducts = products
+    }else{
+      searchedProducts = products.filter(product => {
+        const productText = product.title.toLowerCase();
+        const searchText = text.toLowerCase();
+        return productText.includes(searchText);
+      })
+
+    }
+
+    if(!searchedProducts){
+      items = products
+    }else{
+    items = searchedProducts
+  }
+    console.log('products ',searchedProducts)
     const getProducts = async () => {
         try {
           const res = await axios.get(
@@ -41,7 +63,10 @@ export const  DataProvider= ({children}) => {
         products,
         setProducts,
         cart, 
-        setCart
+        setCart,
+        text,
+        setText,
+        items
         }}
     >
     {children}

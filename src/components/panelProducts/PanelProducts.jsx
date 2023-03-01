@@ -6,7 +6,8 @@ import { HeaderShop } from '../HeaderShop/HeaderShop'
 import { DataContext } from '../../context/Context'
 const PanelProducts=()=> {
   
-  const {products} = useContext(DataContext);
+  const {items} = useContext(DataContext);
+  
   
   
   return (
@@ -14,7 +15,7 @@ const PanelProducts=()=> {
       <HeaderShop/>
       <section className='cards'>
         {
-          products.map(product=>(
+          items.map(product=>(
 
             <CardProduct 
               key={product.id} 

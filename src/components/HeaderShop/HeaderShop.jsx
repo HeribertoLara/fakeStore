@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useState} from 'react'
 import './HeaderShop.css'
 import { TbTruckDelivery } from 'react-icons/tb'
 import { SiHomeassistantcommunitystore } from 'react-icons/si'
@@ -7,8 +7,14 @@ import { HiOutlineShoppingBag } from 'react-icons/hi'
 import { DataContext } from '../../context/Context'
 
  const HeaderShop = ()=> {
-    const {countCart} =  useContext(DataContext)
+    const {
+        countCart,
+        setText,
+        text,
+    } =  useContext(DataContext)
 
+
+    
     
     const [onFocus, setOnFocus ]= useState(false)
     
@@ -31,8 +37,10 @@ import { DataContext } from '../../context/Context'
                 className="header--input" 
                 placeholder= "what are you looking for?"
                 type="text"
+                value={text}
                 onFocus={()=>setOnFocus( true )}
                 onBlur={()=> setOnFocus(false)}
+                onChange={(e) => setText(e.target.value)}
                  />
             
             <p className='header--text'>free Shipping  on<br/> <b>All orders over $149 </b> </p>
