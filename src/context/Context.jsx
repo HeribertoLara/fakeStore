@@ -8,8 +8,10 @@ export const  DataProvider= ({children}) => {
     const [countCart, setCountCart]=useState(0) 
     const [cart, setCart]=useState([])
     const [products, setProducts]= useState([])
+    const [product, setProduct]= useState({})
     const [text, setText]=useState('')
     
+    const url = "https://fakestoreapi.com"
     let items 
 
     let searchedProducts = []
@@ -29,13 +31,12 @@ export const  DataProvider= ({children}) => {
     }else{
     items = searchedProducts
   }
-    console.log('products ',searchedProducts)
+    
     const getProducts = async () => {
         try {
           const res = await axios.get(
-            "https://fakestoreapi.com/products"
+            `${url}/products`
             
-           
           );
         setProducts(res.data)
         
@@ -47,9 +48,7 @@ export const  DataProvider= ({children}) => {
     
       useEffect(()=>{
         getProducts()
-    
       },[])
-
       
   useCallback(()=>{
     setCountCart(cart.lengt)
@@ -66,7 +65,10 @@ export const  DataProvider= ({children}) => {
         setCart,
         text,
         setText,
-        items
+        items,
+        product,
+        setProduct,
+        
         }}
     >
     {children}

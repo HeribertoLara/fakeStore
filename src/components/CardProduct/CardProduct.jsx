@@ -1,5 +1,6 @@
 import React, { useContext } from 'react'
 import {AiTwotoneStar, AiOutlineShopping, AiOutlineShoppingCart} from 'react-icons/ai'
+import { Link } from 'react-router-dom'
 import { DataContext } from '../../context/Context'
 import './CardProduct.css'
 
@@ -8,8 +9,8 @@ const CardProduct= ({
 
 }) => {
 
-   const {cart, setCart, setCountCart} = useContext(DataContext)
-
+    const {cart, setCart, setCountCart} = useContext(DataContext)
+    
     const addProduct = (cart, product) =>{
         cart.push(product)
         setCart([...cart])
@@ -19,17 +20,20 @@ const CardProduct= ({
 
   return (
     <div className='card-product'>
+       
+        <Link to={`/products/${product.id}`}>
         <img className="cards--image" 
             src={'https://placeimg.com/640/480/any'} 
             alt="" />
+        </Link>
         <section  className='card--section'>
 
             <h3 className='card--title'>{
                 product.title.length>30? 
                 product.title.slice(0, 30) +"...":
-                product.title}
+                product.title
+                }
             </h3>
-
 
             <p className='card--price'>$ {product.price}</p>   
             <div className='card--rating'>
