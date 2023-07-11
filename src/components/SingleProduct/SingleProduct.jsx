@@ -6,6 +6,8 @@ import  { IoIosArrowBack } from 'react-icons/io'
 import { GrDeliver } from 'react-icons/gr'
 import "./SingleProduct.css"
 import axios from 'axios'
+import FormControlLabel from '@mui/material/FormControlLabel'
+import Radio from '@mui/material/Radio'
 
 
 const SingleProduct = () => {
@@ -20,16 +22,15 @@ const SingleProduct = () => {
         
       );
     setProduct(res.data)
-    console.log(product)
     
     return res;
-    } catch (error) {
-      alert(error); 
-    }
-  };  
+  } catch (error) {
+    alert(error); 
+  }
+};  
 
-  useEffect(()=>{
-    getSingleProduct()
+useEffect(()=>{
+  getSingleProduct()
   },[])
   return (
     <div className='single'>

@@ -14,17 +14,19 @@ const CardProduct= ({
     const addProduct = (cart, product) =>{
         cart.push(product)
         setCart([...cart])
-        /* console.log(cart) */
         setCountCart(cart.length)
     }
 
   return (
-    <div className='card-product'>
+    <div className='card--product'>
        
-        <Link to={`/products/${product.id}`}>
-        <img className="cards--image" 
-            src={'https://placeimg.com/640/480/any'} 
-            alt="" />
+        <Link 
+            className='card--img--link'
+            to={`/products/${product.id}`}>
+        <img 
+            className="card--image" 
+            src={product.image} 
+            alt="#" />
         </Link>
         <section  className='card--section'>
 

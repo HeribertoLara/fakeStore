@@ -1,4 +1,4 @@
-.card-product{
+.card--product{
     width: 15rem;
     height: 20rem;
     border: solid 1px var(--gray);
@@ -7,12 +7,17 @@
     border-radius: 5px;
 }
 
-.cards--image{
-    width: 100%;
+.card--image{
+    width: 7rem;
     border-radius: 5px 5px 0 0;
 }
+.card--img--link{
+    display: grid;
+    place-items: center;
+    height: 12rem;
+}
 
-.cards--image:hover{
+.card--image:hover{
     cursor: pointer;
     opacity: 20%;
 }
@@ -56,4 +61,10 @@
 .card--button--icon{
     height: 1.5rem;
     font-size: 1rem;
+}
+
+@media only screen and (max-width: 390px){
+    .card-product{
+        margin: 0;
+    }
 }

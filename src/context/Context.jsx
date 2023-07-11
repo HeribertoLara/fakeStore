@@ -39,7 +39,7 @@ export const  DataProvider= ({children}) => {
             
           );
         setProducts(res.data)
-        
+        console.log(products)
         return res;
         } catch (error) {
           alert(error); 
