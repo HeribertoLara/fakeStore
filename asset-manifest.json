@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/HeribertoLara/fakeStore.git/static/css/main.4a0d5fb1.css",
+    "main.js": "/HeribertoLara/fakeStore.git/static/js/main.39ab9f99.js",
+    "index.html": "/HeribertoLara/fakeStore.git/index.html",
+    "static/media/Vector_4.svg": "/HeribertoLara/fakeStore.git/static/media/Vector_4.90113b6252b799e8ee18.svg",
+    "static/media/Vector_3.svg": "/HeribertoLara/fakeStore.git/static/media/Vector_3.77dd18e1fffd9d6f38c3.svg",
+    "main.4a0d5fb1.css.map": "/HeribertoLara/fakeStore.git/static/css/main.4a0d5fb1.css.map",
+    "main.39ab9f99.js.map": "/HeribertoLara/fakeStore.git/static/js/main.39ab9f99.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.4a0d5fb1.css",
+    "static/js/main.39ab9f99.js"
+  ]
+}
