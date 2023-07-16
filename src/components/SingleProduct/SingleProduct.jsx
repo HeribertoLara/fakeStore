@@ -1,20 +1,19 @@
 import React, { useEffect, useContext } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import { DataContext } from '../../context/Context'
-import {AiFillHome, AiFillStar} from 'react-icons/ai'
+import {AiFillHome} from 'react-icons/ai'
 import  { IoIosArrowBack } from 'react-icons/io'
 import { GrDeliver } from 'react-icons/gr'
 import "./SingleProduct.css"
 import axios from 'axios'
-import FormControlLabel from '@mui/material/FormControlLabel'
-import Radio from '@mui/material/Radio'
 
 
 const SingleProduct = () => {
   const {product, setProduct, } = useContext(DataContext)
    const {id}= useParams()
-   /* const SingleProduct = products.find( product=> product.id === id) */
 
+   // eslint-disable-next-line react-hooks/exhaustive-deps
+   useEffect(()=>{
     const getSingleProduct =  async () => {
     try {
       const res = await axios.get(
@@ -29,9 +28,8 @@ const SingleProduct = () => {
   }
 };  
 
-useEffect(()=>{
   getSingleProduct()
-  },[])
+},[id, setProduct])
   return (
     <div className='single'>
       <section className='single--section--header'>
@@ -50,14 +48,14 @@ useEffect(()=>{
         </h2>
 
         <p className='single--price'>${product.price}</p> 
-        <p className='single--rate'>
+        {/* <p className='single--rate'>
           <AiFillStar className='single--stars'/>
-          {product.rating.rate}</p> 
+          {product.rating.rate}</p>  */}
         <p className='single-deliver'><GrDeliver/> Shipping all over the country</p>
         <p className='single--description'>{product.description}</p>
         <p className='single--category'>category: {product.category}</p>
        
-        <p className='single--pieces'> pieces: {product.rating.count}</p>
+        {/* <p className='single--pieces'> pieces: {product.rating.count}</p> */}
       </section>
     </div>
   )
