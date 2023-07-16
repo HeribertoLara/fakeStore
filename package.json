@@ -1,5 +1,5 @@
 {
-  "name": "fakeStore.git",
+  "name": "fakeStore",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -24,7 +24,7 @@
     "deploy": "gh-pages -d build" 
   },
 
-  "homepage":"https://github.com/HeribertoLara/fakeStore.git",
+  "homepage":"https://github.com/HeribertoLara/fakeStore",
   "eslintConfig": {
     "extends": [
       "react-app",
